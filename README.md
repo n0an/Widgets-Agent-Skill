@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/iOS-14+-2980b9.svg" alt="iOS 14+" />
     <img src="https://img.shields.io/badge/swift-5.9+-F05138.svg" alt="Swift 5.9+" />
     <img src="https://img.shields.io/badge/version-1.2.0-blueviolet.svg" alt="Version 1.2.0" />
-    <img src="https://img.shields.io/badge/WWDC%202026-iOS%2027-FF2D55.svg" alt="Covers WWDC 2026 / iOS 27" />
+    <img src="https://img.shields.io/badge/WWDC-2020--2026-FF2D55.svg" alt="Covers WWDC 2020-2026" />
     <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="MIT License" />
     <a href="https://agentskills.io/home">
         <img src="https://img.shields.io/badge/Agent%20Skills-Compatible-purple.svg" alt="Agent Skills Compatible" />
