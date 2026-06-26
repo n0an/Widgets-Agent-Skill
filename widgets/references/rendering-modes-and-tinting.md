@@ -96,6 +96,27 @@ Image("AppIconFrameless")
 
 `luminanceToAlpha()` is a SwiftUI filter that converts each pixel's **brightness into its alpha**: bright pixels become opaque, dark pixels become transparent, midtones become semi-transparent. The result is a clean monochrome mask of your artwork's internal structure. When the system then tints that mask in `.accented` mode, you get a crisp glyph that keeps the icon's detail - not the solid blob you'd get from tinting the opaque original.
 
+### When to use this vs `widgetAccentedRenderingMode`
+
+These two are the same effect by two routes, split by OS version:
+
+- On **iOS 18+**, prefer the declarative modifier: `Image(...).widgetAccentedRenderingMode(.desaturated)` (default-group tint) or `.accentedDesaturated` (accent-group tint). It maps luminance to alpha and recolors *for you* - no manual filter.
+- On **iOS 17 and below**, `widgetAccentedRenderingMode` **does not exist** (it's iOS 18+), so the manual `.luminanceToAlpha()` filter is the equivalent - it's how you got a desaturated, tint-friendly glyph before the modifier shipped.
+
+`.luminanceToAlpha()` still works on iOS 18+, so it's also the right tool when you want **hands-on control** - to combine the mask with a gradient lift, a custom blend mode, or your own `widgetRenderingMode` branch (as in the recipe below). Gate by availability when you want the proper modifier where it exists and the manual fallback below it:
+
+```swift
+@ViewBuilder
+var glyph: some View {
+    let base = Image("AppIconFrameless").resizable().scaledToFit()
+    if #available(iOS 18, *) {
+        base.widgetAccentedRenderingMode(.desaturated)   // proper modifier (iOS 18+)
+    } else {
+        base.luminanceToAlpha()                          // manual equivalent (iOS 17 and below)
+    }
+}
+```
+
 The full recipe (from a shipping complication/icon widget):
 
 ```swift
