@@ -1,0 +1,5 @@
+{
+  "name": "widgets",
+  "version": "1.2.0",
+  "description": "Reviews and writes Swift WidgetKit code: timeline providers, configurations, families, accented/tinted rendering, interactive widgets, Controls, Live Activities, Smart Stack relevance, push-updated widgets, data loading, deep links, animations, and SiriKit/ClockKit migration"
+}

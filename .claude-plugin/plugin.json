@@ -1,0 +1,8 @@
+{
+  "name": "widgets",
+  "description": "Reviews and writes Swift WidgetKit code: timeline providers, configurations, families, accented/tinted rendering, interactive widgets, Controls, Live Activities, Smart Stack relevance, push-updated widgets, data loading, deep links, animations, and SiriKit/ClockKit migration",
+  "version": "1.2.0",
+  "author": "Anton Novoselov",
+  "license": "MIT",
+  "repository": "https://github.com/n0an/Widgets-Agent-Skill"
+}
