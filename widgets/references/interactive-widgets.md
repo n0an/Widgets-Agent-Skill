@@ -139,11 +139,11 @@ In the 27 releases, the **widget extension's view of the shared store is read-on
 
 ```swift
 struct UpdateFavoriteIntent: AppIntent {              // writes → must be the main app
-    static var allowedExecutionTargets: ExecutionTargets { .main }
+    static var allowedExecutionTargets: IntentExecutionTargets { .main }
 }
 
 struct GetStatusIntent: AppIntent {                   // read-only → widget extension is fine
-    static var allowedExecutionTargets: ExecutionTargets { .widgetKitExtension }
+    static var allowedExecutionTargets: IntentExecutionTargets { .widgetKitExtension }
 }
 ```
 

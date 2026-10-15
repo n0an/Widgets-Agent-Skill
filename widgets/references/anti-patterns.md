@@ -37,7 +37,7 @@ WidgetCenter.shared.reloadTimelines(ofKind: "MyWidget")   // exact kind string
 ```
 
 ### Writing from the widget extension's process
-An interactive `AppIntent.perform()` runs in the **app** process for a reason - it can write the shared store. Don't try to write from a value provider or timeline (extension). In the 27 releases, pin write intents with `static var allowedExecutionTargets: ExecutionTargets { .main }`.
+An interactive `AppIntent.perform()` runs in the **app** process for a reason - it can write the shared store. Don't try to write from a value provider or timeline (extension). In the 27 releases, pin write intents with `static var allowedExecutionTargets: IntentExecutionTargets { .main }`.
 
 ### Helper intents polluting Shortcuts
 A button-backing intent shows up as a user action unless you opt out:
